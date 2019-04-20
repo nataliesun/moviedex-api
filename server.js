@@ -22,8 +22,6 @@ app.use((error, req, res, next) => {
     res.status(500).json(response)
 })
 
-const PORT = process.env.PORT || 8000
-
 app.use(function validateBearerToken(req, res, next) {
     const apiToken = process.env.API_TOKEN;
     const authToken = req.get('Authorization');
